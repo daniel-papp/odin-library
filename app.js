@@ -3,9 +3,14 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages; 
     this.read = read;
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${read ? "already read" : "not read yet"}.`
-    }
+}
+
+// It is best to define functions (methods) on the prototype of that object. Doing so means that a single instance
+// of the function will be shared between all of the Book object. Defining the function in the constructor would
+// duplicate the function each time an object is created.
+
+Book.prototype.info = function() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "already read" : "not read yet"}.`
 }
 
 const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkien', 295, false);
