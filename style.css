@@ -30,7 +30,16 @@ body {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     background-color: var(--clr-white);
-    
+    display: flex;
+}
+
+.header img {
+    height: 25px;
+}
+
+.header .user-picture {
+    height: 80px;
+    border-radius: 50%;
 }
 
 .sidebar {
