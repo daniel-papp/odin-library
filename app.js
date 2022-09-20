@@ -69,3 +69,5 @@ const countZero = new Book('Count Zero', "William Gibson", 256, true);
 const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308, true); 
 
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+
+populateBookArea();
