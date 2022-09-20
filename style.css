@@ -9,7 +9,6 @@
     --clr-light-text: #878787;
     --svg-white: invert(91%) sepia(2%) saturate(537%) hue-rotate(347deg) brightness(109%) contrast(99%);
 
-
     font-size: 16px;
     font-family: var(--ff-roboto);
 }
@@ -32,7 +31,7 @@ body {
     grid-row: 1 / 2;
     background-color: var(--clr-white);
     display: grid;
-    grid-template-columns: 3fr minmax(220px, 1fr);
+    grid-template-columns: minmax(250px, 3fr) minmax(220px, 1fr);
     grid-template-rows: 1fr 1fr;
     padding: 0 30px;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
@@ -81,6 +80,7 @@ body {
     grid-row: 2 / 3;
     justify-content: flex-start;
     font-size: 1.6rem;
+    margin-bottom: 5px;
 }
 
 .header .buttons {
@@ -124,7 +124,6 @@ body {
     grid-template-rows: auto 1fr;
     gap: 40px;
     padding: 10px 20px;
-
 }
 
 .sidebar img {
