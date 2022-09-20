@@ -25,6 +25,9 @@ function addBookToLibrary() {
 
     const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
     newBook.info();
+
+    const newBookArray = [newBook];
+    populateBookArea(newBookArray);
     
     myLibrary.push(newBook);
     
@@ -60,9 +63,12 @@ function populateBookArea(bookArray) {
     }
 }
 
+// New book button
 
+const newBookButton = document.getElementById('new-book-btn');
+newBookButton.addEventListener('click', () => addBookToLibrary());
 
-// Test book
+// Test books
 
 const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
 const countZero = new Book('Count Zero', "William Gibson", 256, true); 

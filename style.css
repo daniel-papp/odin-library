@@ -99,6 +99,7 @@ body {
     border: none;
     font-weight: bold;
     border: 2px solid var(--clr-main);
+    cursor: pointer;
 }
 
 .buttons button:hover {
