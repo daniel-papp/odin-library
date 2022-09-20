@@ -34,10 +34,10 @@ function addBookToLibrary() {
 
 // Function for creating book cards and placing them into the main book-area
 
-function populateBookArea() {
+function populateBookArea(bookArray) {
     const bookArea = document.querySelector('.book-area');
 
-    for (let book of myLibrary) {
+    for (let book of bookArray) {
         const newBookCard = document.createElement('div');
         newBookCard.classList.add('book-card');
         bookArea.appendChild(newBookCard);
@@ -70,4 +70,4 @@ const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308,
 
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 
-populateBookArea();
+populateBookArea(myLibrary);
