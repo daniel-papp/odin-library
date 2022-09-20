@@ -32,9 +32,40 @@ function addBookToLibrary() {
 
 }
 
+// Function for creating book cards and placing them into the main book-area
+
+function populateBookArea() {
+    const bookArea = document.querySelector('.book-area');
+
+    for (let book of myLibrary) {
+        const newBookCard = document.createElement('div');
+        newBookCard.classList.add('book-card');
+        bookArea.appendChild(newBookCard);
+
+        const newBookTitle = document.createElement('h3');
+        newBookTitle.textContent = book.title;
+        newBookCard.appendChild(newBookTitle);
+
+        const newBookAuthor = document.createElement('p');
+        newBookAuthor.textContent = book.author;
+        newBookCard.appendChild(newBookAuthor);
+
+        const newBookPages = document.createElement('p');
+        newBookPages.textContent = book.pages;
+        newBookCard.appendChild(newBookPages);
+
+        const newBookRead = document.createElement('p');
+        newBookRead.textContent = book.read;
+        newBookCard.appendChild(newBookRead);
+    }
+}
+
 
 
 // Test book
 
 const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
-console.log(neuromancer.info());
+const countZero = new Book('Count Zero', "William Gibson", 256, true); 
+const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308, true); 
+
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
