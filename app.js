@@ -68,6 +68,40 @@ function populateBookArea(bookArray) {
 const newBookButton = document.getElementById('new-book-btn');
 newBookButton.addEventListener('click', () => addBookToLibrary());
 
+// Create new book form
+
+function activateNewBookCard() {
+    const bookArea = document.querySelector('.book-area');
+    const newBookCard = document.createElement('div');
+    newBookCard.classList.add('new-book-card');
+    bookArea.appendChild(newBookCard);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Test books
 
 const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
@@ -75,5 +109,13 @@ const countZero = new Book('Count Zero', "William Gibson", 256, true);
 const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308, true); 
 
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+
 
 populateBookArea(myLibrary);
