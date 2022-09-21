@@ -29,6 +29,8 @@ function addBookToLibrary() {
     populateBookArea(newBookArray);
     
     myLibrary.push(newBook);
+
+    deactivateNewBookCard();
     
     return newBook.info();
 
@@ -133,6 +135,14 @@ function activateNewBookCard() {
     
 }
 
+// Deactivate new book form 
+
+function deactivateNewBookCard() {
+    const bookArea = document.querySelector('.book-area');
+    const newBookCard = document.querySelector('.new-book-card');
+
+    bookArea.removeChild(newBookCard);
+}
 
 
 // Test books
@@ -144,9 +154,7 @@ const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308,
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+
 
 
 
