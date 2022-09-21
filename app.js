@@ -18,13 +18,12 @@ Book.prototype.info = function() {
 // Function for asking user info, creating a new book and adding it to the library
 
 function addBookToLibrary() {
-    const newBookTitle = prompt('What is the title?');
-    const newBookAuthor = prompt('Who wrote it?');
-    const newBookPages = prompt('How many pages long is the book?');
-    const newBookRead = prompt('Have you read it?');
+    const newBookTitle = document.getElementById('title')['value'];
+    const newBookAuthor = document.getElementById('author')['value'];
+    const newBookPages = document.getElementById('pages')['value'];
+    const newBookRead = document.getElementById('read')['value'];
 
     const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
-    newBook.info();
 
     const newBookArray = [newBook];
     populateBookArea(newBookArray);
@@ -66,7 +65,6 @@ function populateBookArea(bookArray) {
 // New book button
 
 const newBookButton = document.getElementById('new-book-btn');
-// newBookButton.addEventListener('click', () => addBookToLibrary());
 newBookButton.addEventListener('click', () => activateNewBookCard());
 
 // Create new book form
@@ -116,6 +114,7 @@ function activateNewBookCard() {
     authorInput.setAttribute('id', 'author');
     pagesInput.setAttribute('id', 'pages');
     readInput.setAttribute('id', 'read');
+    addButton.setAttribute('id', 'add-book-btn');
   
     bookArea.appendChild(newBookCard);
     newBookCard.appendChild(newBookForm);
@@ -129,6 +128,9 @@ function activateNewBookCard() {
     newBookForm.appendChild(readLabel);
     newBookForm.appendChild(readInput);
     newBookForm.appendChild(addButton);
+
+    addButton.addEventListener('click', () => addBookToLibrary());
+    
 }
 
 
