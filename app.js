@@ -73,8 +73,61 @@ newBookButton.addEventListener('click', () => addBookToLibrary());
 function activateNewBookCard() {
     const bookArea = document.querySelector('.book-area');
     const newBookCard = document.createElement('div');
+    const newBookForm = document.createElement('form');
+    const formHeader = document.createElement('h3');
+    const titleLabel = document.createElement('label');
+    const titleInput = document.createElement('input');
+    const authorLabel = document.createElement('label');
+    const authorInput = document.createElement('input');
+    const pagesLabel = document.createElement('label');
+    const pagesInput = document.createElement('input');
+    const readLabel = document.createElement('label');
+    const readInput = document.createElement('input');
+    const addButton = document.createElement('button');
+
     newBookCard.classList.add('new-book-card');
+    newBookForm.classList.add('new-book-form');
+
+    formHeader.textContent = 'Add new book';
+    titleLabel.textContent = 'Title';
+    authorLabel.textContent = 'Author';
+    pagesLabel.textContent = 'Number of pages';
+    readLabel.textContent = 'Already read';
+    addButton.textContent = 'Add book';
+
+    titleLabel.setAttribute('for', 'title');
+    authorLabel.setAttribute('for', 'author');
+    pagesLabel.setAttribute('for', 'pages');
+    readLabel.setAttribute('for', 'read');
+
+    titleInput.setAttribute('type', 'text');
+    authorInput.setAttribute('type', 'text');
+    pagesInput.setAttribute('type', 'text');
+    readInput.setAttribute('type', 'checkbox');
+    addButton.setAttribute('type', 'button');
+
+    titleInput.setAttribute('name', 'title');
+    authorInput.setAttribute('name', 'author');
+    pagesInput.setAttribute('name', 'pages');
+    readInput.setAttribute('name', 'read');
+
+    titleInput.setAttribute('id', 'title');
+    authorInput.setAttribute('id', 'author');
+    pagesInput.setAttribute('id', 'pages');
+    readInput.setAttribute('id', 'read');
+  
     bookArea.appendChild(newBookCard);
+    newBookCard.appendChild(newBookForm);
+    newBookForm.appendChild(formHeader);
+    newBookForm.appendChild(titleLabel);
+    newBookForm.appendChild(titleInput);
+    newBookForm.appendChild(authorLabel);
+    newBookForm.appendChild(authorInput);
+    newBookForm.appendChild(pagesLabel);
+    newBookForm.appendChild(pagesInput);
+    newBookForm.appendChild(readLabel);
+    newBookForm.appendChild(readInput);
+    newBookForm.appendChild(addButton);
 }
 
 

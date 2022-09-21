@@ -227,7 +227,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translateY(-40%);
-    /* transform: translate(-0%, -50%) translate(0, 0); */
-    /* margin-top: 10px; */
+    display: flex;
+    flex-direction: column;
 
 }
