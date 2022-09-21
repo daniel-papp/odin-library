@@ -66,7 +66,8 @@ function populateBookArea(bookArray) {
 // New book button
 
 const newBookButton = document.getElementById('new-book-btn');
-newBookButton.addEventListener('click', () => addBookToLibrary());
+// newBookButton.addEventListener('click', () => addBookToLibrary());
+newBookButton.addEventListener('click', () => activateNewBookCard());
 
 // Create new book form
 
@@ -132,29 +133,6 @@ function activateNewBookCard() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Test books
 
 const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
@@ -163,13 +141,11 @@ const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308,
 
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 
 
 populateBookArea(myLibrary);
-activateNewBookCard();
