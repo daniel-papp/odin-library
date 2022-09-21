@@ -21,7 +21,9 @@ function addBookToLibrary() {
     const newBookTitle = document.getElementById('title')['value'];
     const newBookAuthor = document.getElementById('author')['value'];
     const newBookPages = document.getElementById('pages')['value'];
-    const newBookRead = document.getElementById('read')['value'];
+    let newBookRead = document.getElementById('read')['checked'];
+
+    newBookRead = newBookRead ? 'Read' : 'Not read';
 
     const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
 
