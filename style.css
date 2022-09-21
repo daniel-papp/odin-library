@@ -217,10 +217,8 @@ body {
 /* New book form style */
 
 .new-book-card {
-    width: 300px;
-    height: 400px;
     background-color: var(--clr-white);
-    padding: 30px 20px;
+    padding: 20px 20px;
     border: 3px solid var(--clr-main);
     border-radius: 10px;
     position: fixed;
@@ -229,5 +227,68 @@ body {
     transform: translateY(-40%);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.new-book-card * {
+    display: block;
+}
+
+.new-book-card h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.new-book-card label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    margin-left: 8px;
+}
+
+.new-book-card input[type="text"],
+.new-book-card input[type="tel"] {
+    width: 350px;
+    font-size: 1rem;
+    font-family: var(--ff-roboto);
+    margin-bottom: 16px;
+    background-color: var(--clr-background);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.2rem 0.6rem;
+}
+
+.new-book-card label[for="read"] {
+    display: inline;
+}
+.new-book-card input[type="checkbox"] {
+    display: inline;
+    height: 1rem;
+    width: 1rem;
+    margin-left: 20px;
+}
+
+.new-book-card button {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    width: 100px;
+    padding: 10px 10px;
+    margin: 30px auto 0 auto;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    border: 2px solid var(--clr-main);
+    cursor: pointer;
+}
+
+.new-book-card button:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+}
+
+.new-book-card button:active {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
 }

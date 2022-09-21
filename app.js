@@ -102,7 +102,7 @@ function activateNewBookCard() {
 
     titleInput.setAttribute('type', 'text');
     authorInput.setAttribute('type', 'text');
-    pagesInput.setAttribute('type', 'text');
+    pagesInput.setAttribute('type', 'tel');
     readInput.setAttribute('type', 'checkbox');
     addButton.setAttribute('type', 'button');
 
@@ -172,3 +172,4 @@ myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 
 
 populateBookArea(myLibrary);
+activateNewBookCard();
