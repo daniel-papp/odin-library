@@ -64,6 +64,15 @@ function populateBookArea(bookArray) {
         const newBookRead = document.createElement('p');
         newBookRead.textContent = book.read;
         newBookCard.appendChild(newBookRead);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-btn');
+        newBookCard.appendChild(deleteButton);
+
+        const deleteIcon = document.createElement('img');
+        deleteIcon.setAttribute('src', './icons/trash-can-outline.svg');
+        deleteIcon.setAttribute('alt', 'trashcan icon');
+        deleteButton.appendChild(deleteIcon);
     }
 }
 

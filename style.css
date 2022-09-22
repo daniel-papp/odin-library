@@ -214,6 +214,31 @@ body {
     text-align: center;
 }
 
+.book-card button {
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 40px;
+    justify-self: end;
+    margin-bottom: -20px;
+    margin-right: -10px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.book-card:hover button {
+    opacity: 1;
+}
+
+.book-card button img {
+    height: 70%;
+    filter: var(--svg-white);
+}
+
 /* New book form style */
 
 .new-book-card {
