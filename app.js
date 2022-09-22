@@ -32,9 +32,10 @@ function addBookToLibrary() {
     
     myLibrary.push(newBook);
 
-    deactivateNewBookCard();
+    animateNewBookcard();
+    setTimeout(deactivateNewBookCard, 500);
+
     
-    return newBook.info();
 
 }
 
@@ -134,7 +135,18 @@ function activateNewBookCard() {
     newBookForm.appendChild(addButton);
 
     addButton.addEventListener('click', () => addBookToLibrary());
-    
+
+    setTimeout(animateNewBookcard, 10);
+
+}
+
+function animateNewBookcard() {
+    const newBookCard = document.querySelector('.new-book-card');
+    if (!newBookCard.className.includes('visible')) {
+        newBookCard.classList.add('visible');
+    } else {
+        newBookCard.classList.remove('visible');
+    }
 }
 
 // Deactivate new book form 
