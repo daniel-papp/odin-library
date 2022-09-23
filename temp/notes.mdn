@@ -1,8 +1,24 @@
-createNewBook -> creates a new Book object with the book info and pushes it to the library array
-updatelibrary -> goes through the DOM book-cards and creates an array from the titles (queryselectorall) loops through the myLibrary array and compares the 
-
 deleteBook -> takes the title (h3) from the card
               searches the myLibrary title keys for the title value
               when it finds a match takes the index of that element
               deletes that element from the myLibrary array
               deletes the book-card element from the DOM
+
+
+createNewBook:
+    function with 4 parameters: title (str), author (str), pages (num), read (bool)
+    constructs a new Book object from function arguments
+    pushes the new book to the myLibrary array
+    ~~translates the boolean read value into 'Read' 'Not read' strings~~ (thi is handled by the populateBookArea)
+    displays the book to the DOM by calling the (currently existing) populateBookArea function
+
+
+getNewBookInfo:
+    retrieves info form the newBookForm
+    calls the createNewBook function with the info as arguments
+    additionally handles the new bok form animation and deconstruction
+
+
+these two functions take the place of the addBookToLibrary function
+this way the format of the preloaded book objects and preloaded book cards will be the same as the newly genarated book's
+

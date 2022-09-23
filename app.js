@@ -17,27 +17,47 @@ Book.prototype.info = function() {
 
 // Function for asking user info, creating a new book and adding it to the library
 
-function addBookToLibrary() {
-    const newBookTitle = document.getElementById('title')['value'];
-    const newBookAuthor = document.getElementById('author')['value'];
-    const newBookPages = document.getElementById('pages')['value'];
-    let newBookRead = document.getElementById('read')['checked'];
+// function addBookToLibrary() {
+//     const newBookTitle = document.getElementById('title')['value'];
+//     const newBookAuthor = document.getElementById('author')['value'];
+//     const newBookPages = document.getElementById('pages')['value'];
+//     let newBookRead = document.getElementById('read')['checked'];
 
-    newBookRead = newBookRead ? 'Read' : 'Not read';
+//     // newBookRead = newBookRead ? 'Read' : 'Not read';
 
-    const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
+//     const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
+
+//     const newBookArray = [newBook];
+//     populateBookArea(newBookArray);
+    
+//     myLibrary.push(newBook);
+
+//     animateNewBookcard();
+//     setTimeout(deactivateNewBookCard, 500);
+// }
+
+// Refactoring addBookToLibrary
+
+function createNewBook(title, author, pages, read) {
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
 
     const newBookArray = [newBook];
     populateBookArea(newBookArray);
-    
-    myLibrary.push(newBook);
+}
+
+function getBookInfo() {
+    const newBookTitle = document.getElementById('title')['value'];
+    const newBookAuthor = document.getElementById('author')['value'];
+    const newBookPages = document.getElementById('pages')['value'];
+    const newBookRead = document.getElementById('read')['checked'];
+
+    createNewBook(newBookTitle, newBookAuthor, newBookPages, newBookRead);
 
     animateNewBookcard();
     setTimeout(deactivateNewBookCard, 500);
-
-    
-
 }
+
 
 // Function for creating book cards and placing them into the main book-area
 
@@ -62,7 +82,7 @@ function populateBookArea(bookArray) {
         newBookCard.appendChild(newBookPages);
 
         const newBookRead = document.createElement('p');
-        newBookRead.textContent = book.read;
+        newBookRead.textContent = book.read ? 'Read' : 'Not read';
         newBookCard.appendChild(newBookRead);
 
         const deleteButton = document.createElement('button');
@@ -145,7 +165,7 @@ function activateNewBookCard() {
     newBookForm.appendChild(readInput);
     newBookForm.appendChild(addButton);
 
-    addButton.addEventListener('click', () => addBookToLibrary());
+    addButton.addEventListener('click', () => getBookInfo());
 
     setTimeout(animateNewBookcard, 10);
 
@@ -182,7 +202,7 @@ function deleteBook(e) {
             myLibrary.splice(myLibrary.indexOf(book), 1)
         }
     }
-    
+
     bookCard.remove();
 }
 
