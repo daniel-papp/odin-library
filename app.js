@@ -49,7 +49,7 @@ function createNewBook(title, author, pages, read) {
 function getBookInfo() {
     const newBookTitle = document.getElementById('title')['value'];
     const newBookAuthor = document.getElementById('author')['value'];
-    const newBookPages = document.getElementById('pages')['value'];
+    const newBookPages = parseInt(document.getElementById('pages')['value']);
     const newBookRead = document.getElementById('read')['checked'];
 
     createNewBook(newBookTitle, newBookAuthor, newBookPages, newBookRead);
@@ -210,12 +210,19 @@ function deleteBook(e) {
 
 // Test books
 
-const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
-const countZero = new Book('Count Zero', "William Gibson", 256, true); 
-const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308, true); 
+// const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
+// const countZero = new Book('Count Zero', "William Gibson", 256, true); 
+// const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308, true); 
 
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
+// myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
 
 
-populateBookArea(myLibrary);
+// populateBookArea(myLibrary);
+
+
+// Preloaded books
+
+createNewBook('Neuromancer', "William Gibson", 292, true);
+createNewBook('Count Zero', "William Gibson", 256, true); 
+createNewBook('Mona Lisa Overdrive', "William Gibson", 308, true); 
 
