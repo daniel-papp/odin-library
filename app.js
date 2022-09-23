@@ -174,6 +174,15 @@ function deactivateNewBookCard() {
 
 function deleteBook(e) {
     const bookCard = e.target.parentNode.parentNode;
+    
+    const titleToDelete = bookCard.children[0].innerText;
+    
+    for (let book of myLibrary) {
+        if (book.title === titleToDelete) {
+            myLibrary.splice(myLibrary.indexOf(book), 1)
+        }
+    }
+    
     bookCard.remove();
 }
 
