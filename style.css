@@ -215,20 +215,23 @@ body {
     gap: 10px;
 }
 
-.book-card button {
+button.read {
     width: 100px;
     font-size: 1rem;
     font-family: var(--ff-roboto);
     padding: 5px;
     border: none;
     border-radius: 5px;
-}
-
-button.read {
     background-color: rgb(132, 213, 132);
 } 
 
 button.not-read {
+    width: 100px;
+    font-size: 1rem;
+    font-family: var(--ff-roboto);
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
     background-color: rgb(255, 166, 166);
 }
 

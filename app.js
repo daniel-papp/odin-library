@@ -195,7 +195,7 @@ function deactivateNewBookCard() {
 // Deleting books from the library array and the DOM
 
 function deleteBook(e) {
-    const bookCard = e.target.parentNode.parentNode;
+    const bookCard = e.currentTarget.parentNode;
     
     const titleToDelete = bookCard.children[0].innerText;
     
@@ -251,4 +251,4 @@ function changeStatus(e) {
 
 createNewBook('Neuromancer', "William Gibson", 292, true);
 createNewBook('Count Zero', "William Gibson", 256, true);
-createNewBook('Mona Lisa Overdrive', "William Gibson", 308, true);
+createNewBook('Mona Lisa Overdrive', "William Gibson", 308, false);
