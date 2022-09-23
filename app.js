@@ -73,6 +73,8 @@ function populateBookArea(bookArray) {
         deleteIcon.setAttribute('src', './icons/trash-can-outline.svg');
         deleteIcon.setAttribute('alt', 'trashcan icon');
         deleteButton.appendChild(deleteIcon);
+
+        deleteButton.addEventListener('click', deleteBook);
     }
 }
 
@@ -168,6 +170,15 @@ function deactivateNewBookCard() {
 }
 
 
+// Deleting books from the library array and the DOM
+
+function deleteBook(e) {
+    const bookCard = e.target.parentNode.parentNode;
+    bookCard.remove();
+}
+
+
+
 // Test books
 
 const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
@@ -175,10 +186,7 @@ const countZero = new Book('Count Zero', "William Gibson", 256, true);
 const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308, true); 
 
 myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-
-
 
 
 populateBookArea(myLibrary);
+

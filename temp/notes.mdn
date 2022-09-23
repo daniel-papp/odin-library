@@ -1,0 +1,8 @@
+createNewBook -> creates a new Book object with the book info and pushes it to the library array
+updatelibrary -> goes through the DOM book-cards and creates an array from the titles (queryselectorall) loops through the myLibrary array and compares the 
+
+deleteBook -> takes the title (h3) from the card
+              searches the myLibrary title keys for the title value
+              when it finds a match takes the index of that element
+              deletes that element from the myLibrary array
+              deletes the book-card element from the DOM
