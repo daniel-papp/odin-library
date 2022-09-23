@@ -83,6 +83,7 @@ function populateBookArea(bookArray) {
 
         const newBookRead = document.createElement('button');
         newBookRead.textContent = book.read ? 'Read' : 'Not read';
+        newBookRead.classList.add(book.read ? 'read' : 'not-read');
         newBookCard.appendChild(newBookRead);
 
         const deleteButton = document.createElement('button');
@@ -220,9 +221,13 @@ function changeStatus(e) {
             if (book.read) {
                 book.read = false;
                 bookCard.children[3].innerText = 'Not read';
+                e.target.classList.remove('read');
+                e.target.classList.add('not-read');
             } else {
                 book.read = true;
                 bookCard.children[3].innerText = 'Read';
+                e.target.classList.remove('not-read');
+                e.target.classList.add('read');
             }
         }
     }
