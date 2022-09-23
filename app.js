@@ -81,7 +81,7 @@ function populateBookArea(bookArray) {
         newBookPages.textContent = book.pages;
         newBookCard.appendChild(newBookPages);
 
-        const newBookRead = document.createElement('p');
+        const newBookRead = document.createElement('button');
         newBookRead.textContent = book.read ? 'Read' : 'Not read';
         newBookCard.appendChild(newBookRead);
 
@@ -95,6 +95,7 @@ function populateBookArea(bookArray) {
         deleteButton.appendChild(deleteIcon);
 
         deleteButton.addEventListener('click', deleteBook);
+        newBookRead.addEventListener('click', changeStatus);
     }
 }
 
@@ -206,6 +207,27 @@ function deleteBook(e) {
     bookCard.remove();
 }
 
+// Read status change
+
+function changeStatus(e) {
+    const bookCard = e.target.parentNode;
+
+    const title = bookCard.children[0].innerText;
+    const status = bookCard.children[3].innerText;
+
+    for (let book of myLibrary) {
+        if (book.title === title) {
+            if (book.read) {
+                book.read = false;
+                bookCard.children[3].innerText = 'Not read';
+            } else {
+                book.read = true;
+                bookCard.children[3].innerText = 'Read';
+            }
+        }
+    }
+}
+
 
 
 // Test books
@@ -223,6 +245,5 @@ function deleteBook(e) {
 // Preloaded books
 
 createNewBook('Neuromancer', "William Gibson", 292, true);
-createNewBook('Count Zero', "William Gibson", 256, true); 
-createNewBook('Mona Lisa Overdrive', "William Gibson", 308, true); 
-
+createNewBook('Count Zero', "William Gibson", 256, true);
+createNewBook('Mona Lisa Overdrive', "William Gibson", 308, true);
