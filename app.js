@@ -15,27 +15,6 @@ Book.prototype.info = function() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "already read" : "not read yet"}.`
 }
 
-// Function for asking user info, creating a new book and adding it to the library
-
-// function addBookToLibrary() {
-//     const newBookTitle = document.getElementById('title')['value'];
-//     const newBookAuthor = document.getElementById('author')['value'];
-//     const newBookPages = document.getElementById('pages')['value'];
-//     let newBookRead = document.getElementById('read')['checked'];
-
-//     // newBookRead = newBookRead ? 'Read' : 'Not read';
-
-//     const newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
-
-//     const newBookArray = [newBook];
-//     populateBookArea(newBookArray);
-    
-//     myLibrary.push(newBook);
-
-//     animateNewBookcard();
-//     setTimeout(deactivateNewBookCard, 500);
-// }
-
 // Refactoring addBookToLibrary
 
 function createNewBook(title, author, pages, read) {
@@ -232,20 +211,6 @@ function changeStatus(e) {
         }
     }
 }
-
-
-
-// Test books
-
-// const neuromancer = new Book('Neuromancer', "William Gibson", 292, true); 
-// const countZero = new Book('Count Zero', "William Gibson", 256, true); 
-// const monaLisaOverdrive = new Book('Mona Lisa Overdrive', "William Gibson", 308, true); 
-
-// myLibrary.push(neuromancer, countZero, monaLisaOverdrive);
-
-
-// populateBookArea(myLibrary);
-
 
 // Preloaded books
 
